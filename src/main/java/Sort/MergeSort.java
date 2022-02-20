@@ -11,7 +11,7 @@ public class MergeSort {
 
         T[] left = Arrays.copyOfRange(array, 0, array.length / 2);
         T[] right = Arrays.copyOfRange(array, array.length / 2, array.length);
-        return merge(left, right);
+        return merge(sort(left), sort(right));
     }
 
     @SuppressWarnings("unchecked")
@@ -40,4 +40,5 @@ public class MergeSort {
 
         return ordered;
     }
+
 }

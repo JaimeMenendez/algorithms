@@ -12,18 +12,18 @@ import java.util.Random;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-class MergeSortTest {
+class BubbleSortTest {
     @Test
     @DisplayName("A null input should return null")
     void nullSortInput() {
-        Assertions.assertNull(MergeSort.sort(null));
+        Assertions.assertNull(BubbleSort.sort(null));
     }
 
     @Test
     @DisplayName("An empty input should return an empty array")
     void emptySortInput() {
         Integer[] emptyArray = {};
-        Integer[] result = MergeSort.sort(emptyArray);
+        Integer[] result = BubbleSort.sort(emptyArray);
         Assertions.assertArrayEquals(emptyArray, result);
         Assertions.assertNotSame(emptyArray, result, "Must return a copy of the object");
     }
@@ -32,7 +32,7 @@ class MergeSortTest {
     @DisplayName("A single element input should return a copy of the array")
     void singleElementInput() {
         Integer[] emptyArray = {1};
-        Integer[] result = MergeSort.sort(emptyArray);
+        Integer[] result = BubbleSort.sort(emptyArray);
         Assertions.assertArrayEquals(emptyArray, result);
         Assertions.assertNotSame(emptyArray, result, "Must return a copy of the object");
     }
@@ -41,13 +41,14 @@ class MergeSortTest {
     @MethodSource("dataGenerator")
     @DisplayName("testing sort with integer input")
     void singleElementInput(Integer[] input, Integer[] expected) {
-        Integer[] output = MergeSort.sort(input);
+        Integer[] output = BubbleSort.sort(input);
         Assertions.assertArrayEquals(output, expected);
         Assertions.assertNotSame(output, expected, "Must return a copy of the object");
     }
 
+
     public static Stream<Arguments> dataGenerator() {
-        return IntStream.rangeClosed(2, 20).mapToObj(MergeSortTest::generateInteger);
+        return IntStream.rangeClosed(2, 20).mapToObj(BubbleSortTest::generateInteger);
     }
 
     private static Arguments generateInteger(int n) {

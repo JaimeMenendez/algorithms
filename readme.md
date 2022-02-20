@@ -36,3 +36,6 @@ and merges the two sorted sub-arrays into one.
 Merge Sort has complexity **O(n log n)** in all the 3 cases (worst, average and best) 
 as the mergesort always divides the array into two halves and takes linear time to merge two halves.
 
+### Bubble Sort
+Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in 
+wrong order. Complexity is **O(n<sup>2</sup>)**.
